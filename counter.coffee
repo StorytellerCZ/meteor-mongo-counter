@@ -1,3 +1,8 @@
+
+COUNTER_COLLECTION_NAME = 'atomic_mongo_counter'
+
+@AtomicCounter = {}
+
 getCounterCollection = (collection) ->
   collection.rawCollection()
 
