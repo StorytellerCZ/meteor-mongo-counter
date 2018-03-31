@@ -1,12 +1,12 @@
 Package.describe({
   name: "pfafman:mongo-counter",
   summary: "Atomic counters stored in MongoDB",
-  version: "0.0.4",
+  version: "0.0.5",
   git: "https://github.com/pfafman/meteor-mongo-counter.git"
 });
 
 Package.on_use(function (api) {
-  api.versionsFrom("METEOR@1.0");
+  //api.versionsFrom("METEOR@1.0");
   api.use(['coffeescript', 'mongo-livedata'], 'server');
   
   api.addFiles('counter.coffee', 'server');
