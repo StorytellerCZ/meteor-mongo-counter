@@ -1,4 +1,6 @@
 
+DEBUG = false
+
 COUNTER_COLLECTION_NAME = 'atomic_mongo_counter'
 
 @AtomicCounter = {}
@@ -25,12 +27,13 @@ _incrementCounter = (collection, counterName, amount = 1) ->
   newDoc = callCounter(
     'findAndModify',
     collection,
-    {_id: counterName},         # query
-    null,                       # sort
-    {$inc: {next_val: amount}},      # update
-    {new: true, upsert: true},  # options
-  )                             # callback added by wrapAsync
-  return newDoc.next_val
+    {_id: counterName},          # query
+    null,                        # sort
+    {$inc: {next_val: amount}},  # update
+    {new: true, upsert: true},   # options
+  )                              # callback added by wrapAsync
+  console.log("_incrementCounter", newDoc) if DEBUG
+  return newDoc?.value?.next_val or newDoc.next_val
 
 
 _decrementCounter = (collection, counterName, amount = 1) ->

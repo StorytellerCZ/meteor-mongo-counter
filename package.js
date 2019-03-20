@@ -1,7 +1,7 @@
 Package.describe({
   name: "pfafman:mongo-counter",
   summary: "Atomic counters stored in MongoDB",
-  version: "0.0.5",
+  version: "0.0.6",
   git: "https://github.com/pfafman/meteor-mongo-counter.git"
 });
 
