@@ -19,7 +19,7 @@ Package.onUse(function (api) {
   }
 });
 
-Package.on_test(function(api) {
+Package.onTest(function(api) {
   api.use(['coffeescript', 'tinytest', "konecty:mongo-counter"]);
   api.addFiles('counter-tests.coffee', 'server');
 });
